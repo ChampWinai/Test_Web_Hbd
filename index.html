@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>เป่าเค้กวันเกิด</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <h1>สุขสันต์วันเกิด!</h1>
+    <div class="form-row">
+      <label for="cakeTheme">เลือกธีมเค้ก: </label>
+      <select id="cakeTheme">
+        <option value="theme1">พาสเทล</option>
+        <option value="theme2">สายรุ้ง</option>
+        <option value="theme3">ช็อกโกแลต</option>
+      </select>
+      <label for="cakeName">ชื่อบนเค้ก: </label>
+      <input
+        id="cakeName"
+        type="text"
+        placeholder="ใส่ชื่อ..."
+        maxlength="20"
+      />
+    </div>
+    <div class="cake">
+      <div class="cake-body"></div>
+      <div class="cake-topping"></div>
+      <div class="candle">
+        <div class="flame" id="flame"></div>
+        <div class="wick"></div>
+      </div>
+      <div class="cake-decoration deco1"></div>
+      <div class="cake-decoration deco2"></div>
+      <div class="cake-decoration deco3"></div>
+      <div id="cakeNameDisplay" class="cake-name"></div>
+    </div>
+    <div id="balloons"></div>
+    <div class="smoke" id="smoke"></div>
+    <div id="countdown" class="countdown"></div>
+    <p id="status">ลองเป่าดูสิ!</p>
+    <button id="startBtn">เริ่มเป่าเทียน</button>
+    <button id="resetBtn">จุดเทียนใหม่</button>
+    <button id="toggleNight">Night Mode</button>
+    <script src="script.js"></script>
+  </body>
+</html>
