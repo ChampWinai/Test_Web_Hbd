@@ -3,21 +3,18 @@ const statusText = document.getElementById("status");
 const resetBtn = document.getElementById("resetBtn");
 
 const wishes = [
-  "ขอให้มีความสุขมาก ๆ สุขภาพแข็งแรง ร่ำรวยเงินทอง!",
-  "ขอให้สมหวังในทุกสิ่งที่ตั้งใจไว้ พบเจอแต่สิ่งดี ๆ ในชีวิต!",
-  "ขอให้ประสบความสำเร็จในหน้าที่การงานและความรัก!",
-  "ขอให้มีรอยยิ้มและเสียงหัวเราะในทุก ๆ วัน!",
-  "ขอให้โชคดี มีแต่คนรักและเอ็นดู!",
-  "ขอให้สุขภาพแข็งแรงทั้งกายและใจ!",
-  "ขอให้มีพลังบวกและแรงบันดาลใจใหม่ ๆ เสมอ!",
-  "ขอให้ปีนี้เป็นปีที่ดีที่สุดของคุณ!",
-  "ขอให้ได้พบเจอแต่เรื่องราวดี ๆ และคนดี ๆ!",
-  "ขอให้ทุกวันเต็มไปด้วยความสุขและความสำเร็จ!",
+  "ขอให้เเชมป์รัก",
+  "ขอให้เเชมป์หลง",
+  "ขอให้เเชมป์งมงายโงหัวไม่ขึ้น",
+  "ขอให้น้องเมย์มีความสุข",
+  "ขอให้น้องเมย์มีเงินมีทอง",
 ];
 
 function showRandomWish() {
   const wish = wishes[Math.floor(Math.random() * wishes.length)];
   statusText.innerHTML = `<strong>🎉 ${wish} 🎉</strong>`;
+  document.getElementById("cake").style.display = "none";
+  document.getElementById("champPhoto").style.display = "block";
 }
 
 function showBalloons() {
@@ -28,20 +25,25 @@ function showBalloons() {
     "#ffb347",
     "#b2f7ef",
     "#fcb6f6",
+    "#ff8c00",
+    "#00fa9a",
+    "#ff6347",
+    "#8a2be2",
   ];
   const balloons = document.getElementById("balloons");
   balloons.innerHTML = "";
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 40; i++) {
+    // เพิ่มจำนวนบอลลูน
     const b = document.createElement("div");
     b.className = "balloon";
-    b.style.left = 10 + Math.random() * 80 + "vw";
+    b.style.left = 5 + Math.random() * 90 + "vw";
     b.style.background = colors[Math.floor(Math.random() * colors.length)];
-    b.style.animationDelay = Math.random() * 0.7 + "s";
+    b.style.animationDelay = Math.random() * 1.5 + "s";
     balloons.appendChild(b);
   }
   setTimeout(() => {
     balloons.innerHTML = "";
-  }, 3000);
+  }, 3500);
 }
 
 async function initAudioDetection() {
@@ -81,8 +83,8 @@ resetBtn.addEventListener("click", () => {
   statusText.textContent = "ลองเป่าดูสิ!";
   document.getElementById("smoke").classList.remove("active");
   document.getElementById("balloons").innerHTML = "";
-  cakeNameInput.value = "";
-  cakeNameDisplay.textContent = "";
+  document.getElementById("champPhoto").style.display = "none";
+  document.getElementById("cake").style.display = "block";
 });
 
 document.getElementById("startBtn").addEventListener("click", () => {

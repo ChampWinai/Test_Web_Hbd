@@ -54,35 +54,42 @@ input[type="text"]:focus {
 .cake {
   position: relative;
   margin: 40px auto 20px auto;
-  width: 240px;
-  height: 220px;
+  width: 380px;
+  height: 320px;
   overflow: hidden;
 }
 
 .cake-body {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 240px;
-  height: 100px;
+  left: 50%;
+  width: 380px;
+  height: 160px;
   background: linear-gradient(90deg, #ffb347 0%, #ffcc70 100%);
   border-radius: 0 0 120px 120px / 0 0 70px 70px;
   box-shadow: 0 10px 30px #e6a04e;
   z-index: 1;
   border: 4px solid #fff;
+  transform: translateX(-50%);
 }
 
 .cake-topping {
   position: absolute;
-  bottom: 90px;
-  left: 15px;
-  width: 210px;
-  height: 38px;
+  bottom: 150px;
+  left: 50%;
+  width: 332px;
+  height: 60px;
   background: linear-gradient(90deg, #fcb6f6 0%, #b2f7ef 100%);
   border-radius: 100px 100px 40px 40px / 40px 40px 20px 20px;
   z-index: 2;
   box-shadow: 0 2px 12px #eec;
   border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  overflow: hidden;
+  transform: translateX(-50%);
 }
 
 .cake.theme2 .cake-body {
@@ -101,11 +108,11 @@ input[type="text"]:focus {
 .candle {
   position: absolute;
   left: 50%;
-  bottom: 130px;
+  bottom: 200px; /* ขยับขึ้นไปบนท็อปปิ้ง */
   transform: translateX(-50%);
   width: 20px;
   height: 56px;
-  z-index: 3;
+  z-index: 4; /* ให้เทียนอยู่เหนือ topping และข้อความ */
   background: repeating-linear-gradient(
     45deg,
     #fff,
@@ -170,15 +177,18 @@ input[type="text"]:focus {
 }
 
 .deco1 {
-  left: 55px;
+  left: 50%;
+  transform: translateX(-72px); /* -72px จากจุดกลาง */
   background: linear-gradient(135deg, #ff69b4 60%, #fff700 100%);
 }
 .deco2 {
-  left: 109px;
+  left: 50%;
+  transform: translateX(-11px); /* -11px จากจุดกลาง */
   background: linear-gradient(135deg, #87ceeb 60%, #ffb347 100%);
 }
 .deco3 {
-  left: 163px;
+  left: 50%;
+  transform: translateX(50px); /* +50px จากจุดกลาง */
   background: linear-gradient(135deg, #fff700 60%, #ff69b4 100%);
 }
 .deco4 {
@@ -198,21 +208,23 @@ input[type="text"]:focus {
 }
 
 .cake-name {
-  position: absolute;
-  top: 100px;
-  left: 15px;
-  width: 210px;
-  max-width: 90%;
-  text-align: center;
-  font-size: 1.2em;
+  position: static;
+  width: 100%;
+  font-size: 1.15em;
   color: #fff;
   text-shadow: 2px 2px 8px #ff69b4, 0 0 10px #87ceeb;
   pointer-events: none;
   font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
   z-index: 10;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+  line-height: 1.3;
+  text-align: center;
+  display: block;
 }
 
 #status {
@@ -329,24 +341,25 @@ input[type="text"]:focus {
     margin-bottom: 10px;
   }
   .cake {
-    width: 140px;
-    height: 120px;
+    width: 98vw;
+    max-width: 340px;
+    height: 180px;
   }
   .cake-body,
   .cake-topping {
-    width: 140px !important;
-    left: 0 !important;
+    width: 98vw !important;
+    max-width: 340px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
   .cake-topping {
-    height: 24px !important;
-    left: 8px !important;
-    width: 124px !important;
+    height: 32px !important;
+    bottom: 80px !important;
   }
   .cake-name {
     font-size: 1em;
-    top: 60px;
-    left: 8px;
-    width: 124px;
+    width: 100%;
+    max-width: 316px;
   }
   .cake-decoration {
     width: 14px;
@@ -354,13 +367,16 @@ input[type="text"]:focus {
     bottom: 18px;
   }
   .deco1 {
-    left: 25px;
+    left: 50%;
+    transform: translateX(-50px);
   }
   .deco2 {
-    left: 60px;
+    left: 50%;
+    transform: translateX(-8px);
   }
   .deco3 {
-    left: 95px;
+    left: 50%;
+    transform: translateX(34px);
   }
   .form-row {
     flex-direction: column;

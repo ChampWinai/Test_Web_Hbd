@@ -15,17 +15,14 @@
         <option value="theme2">สายรุ้ง</option>
         <option value="theme3">ช็อกโกแลต</option>
       </select>
-      <label for="cakeName">ชื่อบนเค้ก: </label>
-      <input
-        id="cakeName"
-        type="text"
-        placeholder="ใส่ชื่อ..."
-        maxlength="20"
-      />
     </div>
-    <div class="cake">
+    <div class="cake" id="cake">
       <div class="cake-body"></div>
-      <div class="cake-topping"></div>
+      <div class="cake-topping">
+        <div id="cakeNameDisplay" class="cake-name">
+          สุขสันต์วันเกิด น้องเมย์แสนซนคนสวย
+        </div>
+      </div>
       <div class="candle">
         <div class="flame" id="flame"></div>
         <div class="wick"></div>
@@ -33,8 +30,19 @@
       <div class="cake-decoration deco1"></div>
       <div class="cake-decoration deco2"></div>
       <div class="cake-decoration deco3"></div>
-      <div id="cakeNameDisplay" class="cake-name"></div>
     </div>
+    <img
+      id="champPhoto"
+      src="Photo/Champ.jpg"
+      alt="Champ"
+      style="
+        display: none;
+        margin: 20px auto;
+        max-width: 220px;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px #ffb34788;
+      "
+    />
     <div id="balloons"></div>
     <div class="smoke" id="smoke"></div>
     <div id="countdown" class="countdown"></div>
